@@ -1,0 +1,33 @@
+{
+  "name": "terranapi",
+  "version": "0.0.1",
+  "description": "API for X3 TC/AP",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "X³",
+    "X3",
+    "reunion",
+    "terran",
+    "conflict",
+    "albion",
+    "prelude",
+    "egosoft",
+    "api",
+    "rest",
+    "node",
+    "javascript",
+    "js"
+  ],
+  "author": "Daniel Harton",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hartontw/terranAPI.git"
+  }
+}
