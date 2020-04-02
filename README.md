@@ -22,15 +22,15 @@ npm install
     "addon": true
 }
 ```
-*Add your config.json in the same folder where server.js is*
-**ip**: IP where API is listening
-**port**: Port where API is listening
-**timeout**: Maximum response wait
-**tick**: Update time for refresh files
-**gamePath**: X³ TC/AB game folder
-**dataPath**: X³ TC/AB User data
-**language**: Language code (phone) of your country, if undefined uses english
-**addon**: If is defined search in addon folder instead game folder
+Add your config.json in the same folder where server.js is
+- **ip**: IP where API is listening
+- **port**: Port where API is listening
+- **timeout**: Maximum response wait
+- **tick**: Update time for refresh files
+- **gamePath**: X³ TC/AB game folder
+- **dataPath**: X³ TC/AB User data
+- **language**: Language code (phone) of your country, if undefined uses english
+- **addon**: If is defined search in addon folder instead game folder
 ---
 ## Usage
 #### REST Server
@@ -49,8 +49,8 @@ node server scripts
 
 #### X³ Game
 Open X³ TC/AP Game and execute the script:
-**api.terran.run**: To start serving
-**api.terran.stop**: To stop serving
+- **api.terran.run**: To start serving
+- **api.terran.stop**: To stop serving
 
 #### Request
 Open web browser or Postman and enter url:
