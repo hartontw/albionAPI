@@ -12,16 +12,16 @@
 			<comment>* ************************************************</comment>
 		</line>
 		<line linenr="002" indent="">
-			<comment>* SCRIPT NAME: Untitled</comment>
+			<comment>* SCRIPT NAME: api.albion.test</comment>
 		</line>
 		<line linenr="003" indent="">
-			<comment>* DESCRIPTION: </comment>
+			<comment>* DESCRIPTION: TEST</comment>
 		</line>
 		<line linenr="004" indent="">
 			<comment>* </comment>
 		</line>
 		<line linenr="005" indent="">
-			<comment>* AUTHOR:           DATE: 2 abril 2020</comment>
+			<comment>* AUTHOR: Daniel Harton          DATE: 2 abril 2020</comment>
 		</line>
 		<line linenr="006" indent="">
 			<comment>* ************************************************</comment>
@@ -58,12 +58,12 @@
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="SCRIPT NAME: Untitled" />
+					<sval type="string" val="SCRIPT NAME: api.albion.test" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="DESCRIPTION: " />
+					<sval type="string" val="DESCRIPTION: TEST" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
@@ -73,7 +73,7 @@
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="AUTHOR:           DATE: 2 abril 2020" />
+					<sval type="string" val="AUTHOR: Daniel Harton          DATE: 2 abril 2020" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />

@@ -14,7 +14,7 @@
 			<comment>* ************************************************</comment>
 		</line>
 		<line linenr="002" indent="">
-			<comment>* SCRIPT NAME: api.terran.race.class</comment>
+			<comment>* SCRIPT NAME: api.albion.race.class</comment>
 		</line>
 		<line linenr="003" indent="">
 			<comment>* DESCRIPTION: Simple conversion system for races</comment>
@@ -1608,7 +1608,7 @@
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="SCRIPT NAME: api.terran.race.class" />
+					<sval type="string" val="SCRIPT NAME: api.albion.race.class" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />

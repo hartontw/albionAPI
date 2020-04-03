@@ -14,7 +14,7 @@
 			<comment>* ************************************************</comment>
 		</line>
 		<line linenr="002" indent="">
-			<comment>* SCRIPT NAME: api.terran.get.player</comment>
+			<comment>* SCRIPT NAME: api.albion.get.player</comment>
 		</line>
 		<line linenr="003" indent="">
 			<comment>* DESCRIPTION: All related info about Player</comment>
@@ -66,7 +66,7 @@
 			<text> </text>
 			<text>script</text>
 			<text> </text>
-			<call>api.terran.player.json</call>
+			<call>api.albion.player.json</call>
 			<text> </text>
 			<text>:</text>
 		</line>
@@ -440,7 +440,7 @@
 				</sval>
 				<sval type="array" size="6">
 					<sval type="int" val="102" />
-					<sval type="string" val="api.terran.player.json" />
+					<sval type="string" val="api.albion.player.json" />
 					<sval type="int" val="2" />
 					<sval type="int" val="0" />
 					<sval type="int" val="0" />
@@ -769,7 +769,7 @@
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="SCRIPT NAME: api.terran.get.player" />
+					<sval type="string" val="SCRIPT NAME: api.albion.get.player" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />

@@ -17,7 +17,7 @@
 			<comment>* ************************************************</comment>
 		</line>
 		<line linenr="002" indent="">
-			<comment>* SCRIPT NAME: api.terran</comment>
+			<comment>* SCRIPT NAME: api.albion</comment>
 		</line>
 		<line linenr="003" indent="">
 			<var>$version</var>
@@ -237,7 +237,7 @@
 			<text> </text>
 			<text>=</text>
 			<text> </text>
-			<text>'terranAPI_'</text>
+			<text>'albionAPI_'</text>
 			<text> </text>
 			<text>+</text>
 			<text> </text>
@@ -1047,7 +1047,7 @@
 			<text> </text>
 			<text>=</text>
 			<text> </text>
-			<text>'terranAPI v'</text>
+			<text>'albionAPI v'</text>
 			<text> </text>
 			<text>+</text>
 			<text> </text>
@@ -1553,7 +1553,7 @@
 					<sval type="int" val="7" />
 					<sval type="int" val="3" />
 					<sval type="int" val="5" />
-					<sval type="string" val="terranAPI_" />
+					<sval type="string" val="albionAPI_" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="0" />
 					<sval type="int" val="15" />
@@ -2105,7 +2105,7 @@
 					<sval type="int" val="24" />
 					<sval type="int" val="3" />
 					<sval type="int" val="5" />
-					<sval type="string" val="terranAPI v" />
+					<sval type="string" val="albionAPI v" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="4" />
 					<sval type="int" val="15" />
@@ -2492,7 +2492,7 @@
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="SCRIPT NAME: api.terran" />
+					<sval type="string" val="SCRIPT NAME: api.albion" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="1" />

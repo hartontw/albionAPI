@@ -4,8 +4,8 @@
 Get last versions of [Node.js](https://nodejs.org/es/) and [GIT](https://git-scm.com/)
 
 ```bash
-git clone https://github.com/hartontw/terranAPI.git
-cd terranAPI
+git clone https://github.com/hartontw/albionAPI.git
+cd albionAPI
 npm install
 ```
 
@@ -49,8 +49,8 @@ node server scripts
 
 #### X³ Game
 Open X³ TC/AP Game and execute the script:
-- **api.terran.run**: To start serving
-- **api.terran.stop**: To stop serving
+- **api.albion.run**: To start serving
+- **api.albion.stop**: To stop serving
 
 #### Request
 Open web browser or Postman and enter url:
@@ -63,9 +63,9 @@ http://127.0.0.1:8080/player
 - If Game has not desktop focus, all requests will result in timeout
 - If REST server is off, Game Listener will be stopped and can not will be run again until server turn on
 - Running Game Listener after clearing language file can be problematic, load game solves it
-- Running state can be cancelled any time clearing or setting to false the **global variable**, default: **terranAPI_9999**
+- Running state can be cancelled any time clearing or setting to false the **global variable**, default: **albionAPI_9999**
 - By default files used are, [GAME_PATH]/t/9999-Lxxx.xml file and [DATA_PATH]/log9nnnn.txt range
-- **api.terran** can be called directly passing needed params (not recommended)
+- **api.albion** can be called directly passing needed params (not recommended)
 
 **Environment variables**
 ```js
