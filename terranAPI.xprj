@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated using X-Studio -->
 <project version="1">
-	<document type="script">D:\Proyectos\terranAPI\scripts\api.terran.xml</document>
-	<document type="script">D:\Proyectos\terranAPI\scripts\api.terran.stop.xml</document>
-	<document type="script">D:\Proyectos\terranAPI\scripts\api.terran.player.json.xml</document>
-	<document type="script">D:\Proyectos\terranAPI\scripts\api.terran.start.xml</document>
-	<document type="script">D:\Proyectos\terranAPI\scripts\api.terran.ship.json.xml</document>
-	<document type="script">D:\Proyectos\terranAPI\scripts\api.terran.race.argon.ship.class.xml</document>
-	<document type="script">D:\Proyectos\terranAPI\scripts\api.terran.race.class.xml</document>
-	<document type="script">D:\Proyectos\terranAPI\scripts\api.terran.get.ship.xml</document>
-	<document type="script">D:\Proyectos\terranAPI\scripts\api.terran.get.player.xml</document>
+	<document type="script">D:\Proyectos\terranAPI\scripts\api.albion.xml</document>
+	<document type="script">D:\Proyectos\terranAPI\scripts\api.albion.test.xml</document>
+	<document type="script">D:\Proyectos\terranAPI\scripts\api.albion.stop.xml</document>
+	<document type="script">D:\Proyectos\terranAPI\scripts\api.albion.start.xml</document>
+	<document type="script">D:\Proyectos\terranAPI\scripts\api.albion.player.json.xml</document>
+	<document type="script">D:\Proyectos\terranAPI\scripts\api.albion.ship.json.xml</document>
+	<document type="script">D:\Proyectos\terranAPI\scripts\api.albion.race.class.xml</document>
+	<document type="script">D:\Proyectos\terranAPI\scripts\api.albion.race.argon.ship.class.xml</document>
+	<document type="script">D:\Proyectos\terranAPI\scripts\api.albion.get.ship.xml</document>
+	<document type="script">D:\Proyectos\terranAPI\scripts\api.albion.get.player.xml</document>
 </project>

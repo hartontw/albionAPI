@@ -2,7 +2,7 @@
 <?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
 <!-- Generated using X-Studio -->
 <script>
-	<name>api.terran.ship.json</name>
+	<name>api.albion.ship.json</name>
 	<version>1</version>
 	<engineversion>50</engineversion>
 	<description></description>
@@ -1796,7 +1796,7 @@
 	</sourcetext>
 	<codearray>
 		<sval type="array" size="10">
-			<sval type="string" val="api.terran.ship.json" />
+			<sval type="string" val="api.albion.ship.json" />
 			<sval type="int" val="50" />
 			<sval type="string" val="" />
 			<sval type="int" val="1" />

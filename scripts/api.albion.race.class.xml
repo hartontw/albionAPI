@@ -2,7 +2,7 @@
 <?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
 <!-- Generated using X-Studio -->
 <script>
-	<name>api.terran.race.class</name>
+	<name>api.albion.race.class</name>
 	<version>1</version>
 	<engineversion>50</engineversion>
 	<description></description>
@@ -734,7 +734,7 @@
 	</sourcetext>
 	<codearray>
 		<sval type="array" size="10">
-			<sval type="string" val="api.terran.race.class" />
+			<sval type="string" val="api.albion.race.class" />
 			<sval type="int" val="50" />
 			<sval type="string" val="" />
 			<sval type="int" val="1" />

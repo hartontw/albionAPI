@@ -2,7 +2,7 @@
 <?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
 <!-- Generated using X-Studio -->
 <script>
-	<name>api.terran.get.ship</name>
+	<name>api.albion.stop</name>
 	<version>1</version>
 	<engineversion>50</engineversion>
 	<description></description>
@@ -12,24 +12,51 @@
 			<comment>* ************************************************</comment>
 		</line>
 		<line linenr="002" indent="">
-			<comment>* SCRIPT NAME: api.terran.get.ship</comment>
+			<comment>* SCRIPT NAME: api.terran.stop</comment>
 		</line>
 		<line linenr="003" indent="">
-			<comment>* DESCRIPTION: Get ship info</comment>
+			<comment>* DESCRIPTION: Basic API stop command</comment>
 		</line>
 		<line linenr="004" indent="">
 			<comment>* </comment>
 		</line>
 		<line linenr="005" indent="">
-			<comment>* </comment>
+			<comment>* AUTHOR: Daniel Harton          DATE: 2 abril 2020</comment>
 		</line>
 		<line linenr="006" indent="">
-			<comment>* AUTHOR: Daniel Harton          DATE: 1 april 2020</comment>
-		</line>
-		<line linenr="007" indent="">
 			<comment>* ************************************************</comment>
 		</line>
-		<line linenr="008" indent="" />
+		<line linenr="007" indent="" />
+		<line linenr="008" indent="" interruptable="@">
+			<text>=</text>
+			<text> </text>
+			<var>null</var>
+			<text>-&gt;</text>
+			<text> </text>
+			<text>call</text>
+			<text> </text>
+			<text>script</text>
+			<text> </text>
+			<call>api.terran</call>
+			<text> </text>
+			<text>:</text>
+			<text> </text>
+			<text>argument1</text>
+			<text>=</text>
+			<var>9999</var>
+			<text> </text>
+			<text>argument2</text>
+			<text>=</text>
+			<var>1000</var>
+			<text> </text>
+			<text>argument3</text>
+			<text>=</text>
+			<var>[FALSE]</var>
+			<text> </text>
+			<text>argument4</text>
+			<text>=</text>
+			<var>0</var>
+		</line>
 		<line linenr="009" indent="">
 			<text>return</text>
 			<text> </text>
@@ -38,13 +65,29 @@
 	</sourcetext>
 	<codearray>
 		<sval type="array" size="10">
-			<sval type="string" val="api.terran.get.ship" />
+			<sval type="string" val="api.albion.stop" />
 			<sval type="int" val="50" />
 			<sval type="string" val="" />
 			<sval type="int" val="1" />
 			<sval type="int" val="0" />
 			<sval type="int" val="0" />
-			<sval type="array" size="1">
+			<sval type="array" size="2">
+				<sval type="array" size="14">
+					<sval type="int" val="102" />
+					<sval type="string" val="api.terran" />
+					<sval type="int" val="-2147483647" />
+					<sval type="int" val="0" />
+					<sval type="int" val="0" />
+					<sval type="int" val="4" />
+					<sval type="int" val="4" />
+					<sval type="int" val="9999" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1000" />
+					<sval type="int" val="131075" />
+					<sval type="int" val="9" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="103" />
 					<sval type="int" val="0" />
@@ -52,7 +95,7 @@
 				</sval>
 			</sval>
 			<sval type="int" val="0" />
-			<sval type="array" size="8">
+			<sval type="array" size="7">
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
@@ -61,17 +104,12 @@
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="SCRIPT NAME: api.terran.get.ship" />
+					<sval type="string" val="SCRIPT NAME: api.terran.stop" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="DESCRIPTION: Get ship info" />
-				</sval>
-				<sval type="array" size="3">
-					<sval type="int" val="0" />
-					<sval type="int" val="1" />
-					<sval type="string" val="" />
+					<sval type="string" val="DESCRIPTION: Basic API stop command" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
@@ -81,7 +119,7 @@
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="AUTHOR: Daniel Harton          DATE: 1 april 2020" />
+					<sval type="string" val="AUTHOR: Daniel Harton          DATE: 2 abril 2020" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />

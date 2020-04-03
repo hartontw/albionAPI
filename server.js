@@ -27,7 +27,7 @@ function manageScripts() {
 
     let scripts = fs.readdirSync(scriptPath);
     for(let script of scripts) {
-        if (script.match(/^api\.terran/)) {
+        if (script.match(/^api\.albion/)) {
             fs.unlinkSync(path.join(scriptPath, script));
         }
     }
@@ -107,7 +107,7 @@ function addCommand(command) {
         }
     }
     if (max > limit) {
-        throw new Error(`How is even possible: terranAPI only can handle ${limit} requests at time`);
+        throw new Error(`How is even possible: albionAPI only can handle ${limit} requests at time`);
     }
     command.index = max;
     commands[max] = command;
@@ -160,11 +160,11 @@ onStart();
 onExit();
 
 app.listen(process.env.PORT, process.env.IP);
-console.log(`terranAPI listening on http://${hostName}`);
+console.log(`albionAPI listening on http://${hostName}`);
 
 app.get("/player", (req, res, next) => {
     sendRequest(req, res, {
-        command:'api.terran.get.player',
+        command:'api.albion.get.player',
         args: [
             'ship'
         ]

@@ -2,7 +2,7 @@
 <?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
 <!-- Generated using X-Studio -->
 <script>
-	<name>api.terran.get.player</name>
+	<name>api.albion.get.player</name>
 	<version>1</version>
 	<engineversion>50</engineversion>
 	<description></description>
@@ -309,7 +309,7 @@
 			<text> </text>
 			<text>:</text>
 			<text> </text>
-			<text>ship</text>
+			<text>argument1</text>
 			<text>=</text>
 			<var>[PLAYERSHIP]</var>
 		</line>
@@ -399,7 +399,7 @@
 	</sourcetext>
 	<codearray>
 		<sval type="array" size="10">
-			<sval type="string" val="api.terran.get.player" />
+			<sval type="string" val="api.albion.get.player" />
 			<sval type="int" val="50" />
 			<sval type="string" val="" />
 			<sval type="int" val="1" />
