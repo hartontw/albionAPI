@@ -14,7 +14,7 @@ function onExit(code) {
         if (interval) {
             clearInterval(interval);
         }
-        file.writeXML(command.max());
+        file.writeXML('STOPPED', command.max());
         process.exit(0);
     }
 }
@@ -32,10 +32,9 @@ for(let arg of process.argv) {
     }
 }
 
-file.writeXML(command.max(), command.get());
+file.writeXML('RUNNING', command.max(), command.get());
 interval = setInterval(() => {
-    console.log(command.get());
-    file.writeXML(command.max(), command.get());
+    file.writeXML('RUNNING', command.max(), command.get());
 }, TICK);
 
 app.listen(process.env.PORT, process.env.IP);

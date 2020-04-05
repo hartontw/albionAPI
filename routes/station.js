@@ -1,4 +1,4 @@
-const command = require('../src/command');
+const sendRequest = require('../src/command').sendRequest;
 const express = require('express');
 const app = express();
 

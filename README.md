@@ -16,6 +16,9 @@ npm install
     "port": 8080,
     "timeout": 5000,
     "tick": 1000,
+    "debug": 0,
+    "gameTick": 1000,
+    "gameDebug": 0,
     "gamePath": "C:/Program Files (x86)/Steam/steamapps/common/x3 terran conflict",
     "dataPath":"C:/Users/Default/Documents/Egosoft/X3AP",
     "language": 34,
@@ -27,6 +30,9 @@ Add your config.json in the same folder where server.js is
 - **port**: Port where API is listening
 - **timeout**: Maximum response wait
 - **tick**: Update time for refresh files
+- **debug**: Debug level [0(none) - 4(max)]
+- **gameTick**: Update time for refresh files, if undefined 1000
+- **gameDebug**: Debug game level [0(none) - 4(max)], if undefined can be set from game
 - **gamePath**: X³ TC/AB game folder
 - **dataPath**: X³ TC/AB User data
 - **language**: Language code (phone) of your country, if undefined uses english
@@ -73,6 +79,9 @@ process.env.IP
 process.env.PORT
 process.env.TIME_OUT
 process.env.TICK
+process.env.DEBUG
+process.env.GAME_TICK
+process.env.GAME_DEBUG
 process.env.GAME_PATH
 process.env.DATA_PATH
 process.env.LANGUAGE

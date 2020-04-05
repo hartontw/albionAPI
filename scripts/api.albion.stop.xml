@@ -45,18 +45,9 @@
 			<text>=</text>
 			<var>9999</var>
 			<text> </text>
-			<text>tick</text>
-			<text>=</text>
-			<var>1000</var>
-			<text> </text>
 			<text>run</text>
 			<text>=</text>
 			<var>[FALSE]</var>
-			<text> </text>
-			<text>debug</text>
-			<text>=</text>
-			<var>0</var>
-			<text> </text>
 		</line>
 		<line linenr="009" indent="">
 			<text>return</text>
@@ -73,21 +64,17 @@
 			<sval type="int" val="0" />
 			<sval type="int" val="0" />
 			<sval type="array" size="2">
-				<sval type="array" size="14">
+				<sval type="array" size="10">
 					<sval type="int" val="102" />
 					<sval type="string" val="api.albion" />
 					<sval type="int" val="-2147483647" />
 					<sval type="int" val="0" />
 					<sval type="int" val="0" />
-					<sval type="int" val="4" />
+					<sval type="int" val="2" />
 					<sval type="int" val="4" />
 					<sval type="int" val="9999" />
-					<sval type="int" val="4" />
-					<sval type="int" val="1000" />
 					<sval type="int" val="131075" />
 					<sval type="int" val="9" />
-					<sval type="int" val="4" />
-					<sval type="int" val="0" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="103" />

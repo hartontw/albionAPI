@@ -42,7 +42,7 @@ function sendCommand(command) {
                     resolve(json);
                 }
                 catch(err) {
-                    reject({code:err});
+                    reject({code:500, message:"Wrong JSON format"});
                 }
                 finally {
                     entries[command.index] = undefined;
@@ -60,9 +60,15 @@ function sendCommand(command) {
 function sendRequest(req, res, command) {
     command.title = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     command.description = req.headers['user-agent'];
+    command.command = command.command.toLowerCase();    
+    for(let i in command.args) {
+        command.args[i] = command.args[i].toLowerCase();
+    }
     sendCommand(command)
     .then(json => {
-        res.json(json);
+        res.set('Player-Name', json.meta.player);
+        res.set('Playing-Time', json.meta.playingTime);
+        res.json(json.error ? json.error : json.response);
     })
     .catch(err => {
         console.error(err);

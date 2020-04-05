@@ -1,0 +1,601 @@
+<?xml version="1.0" standalone="yes"?>
+<?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
+<!-- Generated using X-Studio -->
+<script>
+	<name>api.albion.response</name>
+	<version>1</version>
+	<engineversion>50</engineversion>
+	<description></description>
+	<arguments>
+		<argument index="1" name="response" type="Var/String" desc="Response content" />
+		<argument index="2" name="errorCode" type="Var/Number" desc="Response code" />
+		<argument index="3" name="format" type="Var/Boolean" desc="Format" />
+	</arguments>
+	<sourcetext>
+		<line linenr="001" indent="">
+			<comment>* ************************************************</comment>
+		</line>
+		<line linenr="002" indent="">
+			<comment>* SCRIPT NAME: api.albion.response</comment>
+		</line>
+		<line linenr="003" indent="">
+			<comment>* DESCRIPTION: Response and error formatting</comment>
+		</line>
+		<line linenr="004" indent="">
+			<comment>* </comment>
+		</line>
+		<line linenr="005" indent="">
+			<comment>* AUTHOR: Daniel Harton          DATE: 4 abril 2020</comment>
+		</line>
+		<line linenr="006" indent="">
+			<comment>* ************************************************</comment>
+		</line>
+		<line linenr="007" indent="" />
+		<line linenr="008" indent="">
+			<text>if</text>
+			<text> </text>
+			<var>$format</var>
+		</line>
+		<line linenr="009" indent="&#160;">
+			<var>$playingTime</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>playing</text>
+			<text> </text>
+			<text>time</text>
+		</line>
+		<line linenr="010" indent="&#160;">
+			<var>$playerName</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>get</text>
+			<text> </text>
+			<text>player</text>
+			<text> </text>
+			<text>name</text>
+		</line>
+		<line linenr="011" indent="&#160;">
+			<var>$meta</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'&quot;meta&quot;:{&quot;player&quot;:&quot;'</text>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$playerName</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<text>'&quot;,&quot;playingTime&quot;:'</text>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$playingTime</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<text>'}'</text>
+		</line>
+		<line linenr="012" indent="&#160;" />
+		<line linenr="013" indent="&#160;">
+			<text>if</text>
+			<text> </text>
+			<var>$errorCode</var>
+		</line>
+		<line linenr="014" indent="&#160;&#160;">
+			<var>$return</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'&quot;error&quot;:{&quot;code&quot;:'</text>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$errorCode</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<text>',&quot;message&quot;:&quot;'</text>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$response</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<text>'&quot;}'</text>
+		</line>
+		<line linenr="015" indent="&#160;">
+			<text>else</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$response</var>
+			<text> </text>
+			<text>AND</text>
+			<text> </text>
+			<var>$response</var>
+			<text> </text>
+			<text>!=</text>
+			<text> </text>
+			<text>''</text>
+		</line>
+		<line linenr="016" indent="&#160;&#160;">
+			<text>if</text>
+			<text> </text>
+			<text>match</text>
+			<text> </text>
+			<text>regular</text>
+			<text> </text>
+			<text>expression</text>
+			<text>:</text>
+			<text> </text>
+			<text>'error:{'</text>
+			<text> </text>
+			<text>to</text>
+			<text> </text>
+			<text>string</text>
+			<text> </text>
+			<var>$response</var>
+		</line>
+		<line linenr="017" indent="&#160;&#160;&#160;">
+			<var>$return</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$response</var>
+		</line>
+		<line linenr="018" indent="&#160;&#160;">
+			<text>else</text>
+		</line>
+		<line linenr="019" indent="&#160;&#160;&#160;">
+			<var>$return</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'&quot;response&quot;:{'</text>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$response</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<text>'}'</text>
+		</line>
+		<line linenr="020" indent="&#160;&#160;">
+			<text>end</text>
+		</line>
+		<line linenr="021" indent="&#160;">
+			<text>else</text>
+		</line>
+		<line linenr="022" indent="&#160;&#160;">
+			<var>$return</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'&quot;error&quot;:{&quot;code&quot;:500,&quot;message&quot;:&quot;Internal server error&quot;}'</text>
+		</line>
+		<line linenr="023" indent="&#160;">
+			<text>end</text>
+		</line>
+		<line linenr="024" indent="&#160;" />
+		<line linenr="025" indent="&#160;">
+			<var>$return</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'{'</text>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$meta</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<text>','</text>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<var>$return</var>
+			<text> </text>
+			<text>+</text>
+			<text> </text>
+			<text>'}'</text>
+		</line>
+		<line linenr="026" indent="">
+			<text>else</text>
+		</line>
+		<line linenr="027" indent="&#160;">
+			<var>$return</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>array</text>
+			<text> </text>
+			<text>alloc</text>
+			<text>:</text>
+			<text> </text>
+			<text>size</text>
+			<text>=</text>
+			<var>3</var>
+		</line>
+		<line linenr="028" indent="&#160;">
+			<var>$return</var>
+			<text>[</text>
+			<var>0</var>
+			<text>]</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$response</var>
+		</line>
+		<line linenr="029" indent="&#160;">
+			<var>$return</var>
+			<text>[</text>
+			<var>1</var>
+			<text>]</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>$errorCode</var>
+		</line>
+		<line linenr="030" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="031" indent="" />
+		<line linenr="032" indent="">
+			<text>return</text>
+			<text> </text>
+			<var>$return</var>
+		</line>
+	</sourcetext>
+	<codearray>
+		<sval type="array" size="10">
+			<sval type="string" val="api.albion.response" />
+			<sval type="int" val="50" />
+			<sval type="string" val="" />
+			<sval type="int" val="1" />
+			<sval type="int" val="0" />
+			<sval type="array" size="7">
+				<sval type="string" val="response" />
+				<sval type="string" val="errorCode" />
+				<sval type="string" val="format" />
+				<sval type="string" val="playingTime" />
+				<sval type="string" val="playerName" />
+				<sval type="string" val="meta" />
+				<sval type="string" val="return" />
+			</sval>
+			<sval type="array" size="20">
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610608637" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="2" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="141" />
+					<sval type="int" val="3" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="1070" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="31">
+					<sval type="int" val="104" />
+					<sval type="int" val="5" />
+					<sval type="int" val="9" />
+					<sval type="int" val="5" />
+					<sval type="string" val="&quot;meta&quot;:{&quot;player&quot;:&quot;" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="4" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="5" />
+					<sval type="string" val="&quot;,&quot;playingTime&quot;:" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="3" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="5" />
+					<sval type="string" val="}" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="9" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-4" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-6" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-8" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610610941" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="31">
+					<sval type="int" val="104" />
+					<sval type="int" val="6" />
+					<sval type="int" val="9" />
+					<sval type="int" val="5" />
+					<sval type="string" val="&quot;error&quot;:{&quot;code&quot;:" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="5" />
+					<sval type="string" val=",&quot;message&quot;:&quot;" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="5" />
+					<sval type="string" val="&quot;}" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="9" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-4" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-6" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-8" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="14" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="104" />
+					<sval type="int" val="-1610609403" />
+					<sval type="int" val="5" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="5" />
+					<sval type="string" val="" />
+					<sval type="int" val="15" />
+					<sval type="int" val="1" />
+					<sval type="int" val="15" />
+					<sval type="int" val="9" />
+					<sval type="int" val="5" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="9" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-3" />
+				</sval>
+				<sval type="array" size="6">
+					<sval type="int" val="1478" />
+					<sval type="int" val="-1610609917" />
+					<sval type="int" val="5" />
+					<sval type="string" val="error:{" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="6" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="12" />
+				</sval>
+				<sval type="array" size="19">
+					<sval type="int" val="104" />
+					<sval type="int" val="6" />
+					<sval type="int" val="5" />
+					<sval type="int" val="5" />
+					<sval type="string" val="&quot;response&quot;:{" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="5" />
+					<sval type="string" val="}" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="5" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="14" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="104" />
+					<sval type="int" val="6" />
+					<sval type="int" val="1" />
+					<sval type="int" val="5" />
+					<sval type="string" val="&quot;error&quot;:{&quot;code&quot;:500,&quot;message&quot;:&quot;Internal server error&quot;}" />
+					<sval type="int" val="1" />
+					<sval type="int" val="-1" />
+				</sval>
+				<sval type="array" size="31">
+					<sval type="int" val="104" />
+					<sval type="int" val="6" />
+					<sval type="int" val="9" />
+					<sval type="int" val="5" />
+					<sval type="string" val="{" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="5" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="5" />
+					<sval type="string" val="," />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="5" />
+					<sval type="string" val="}" />
+					<sval type="int" val="15" />
+					<sval type="int" val="11" />
+					<sval type="int" val="9" />
+					<sval type="int" val="-1" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-2" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-4" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-6" />
+					<sval type="int" val="11" />
+					<sval type="int" val="-8" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="112" />
+					<sval type="int" val="19" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="128" />
+					<sval type="int" val="6" />
+					<sval type="int" val="4" />
+					<sval type="int" val="3" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="130" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="4" />
+					<sval type="int" val="0" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="0" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="130" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="4" />
+					<sval type="int" val="1" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="1" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="103" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+				</sval>
+			</sval>
+			<sval type="array" size="3">
+				<sval type="array" size="2">
+					<sval type="int" val="11" />
+					<sval type="string" val="Response content" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="10" />
+					<sval type="string" val="Response code" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="63" />
+					<sval type="string" val="Format" />
+				</sval>
+			</sval>
+			<sval type="array" size="16">
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="************************************************" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="SCRIPT NAME: api.albion.response" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="DESCRIPTION: Response and error formatting" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="AUTHOR: Daniel Harton          DATE: 4 abril 2020" />
+				</sval>
+				<sval type="array" size="3">
+					<sval type="int" val="0" />
+					<sval type="int" val="1" />
+					<sval type="string" val="************************************************" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="0" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="11" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="12" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="13" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="14" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="14" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="16" />
+					<sval type="int" val="5" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="19" />
+					<sval type="int" val="4" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="19" />
+					<sval type="int" val="2" />
+				</sval>
+			</sval>
+			<sval type="int" val="0" />
+		</sval>
+	</codearray>
+</script>

@@ -17,18 +17,21 @@ function getPageLength() {
     return 0;
 }
 
-function writeXML(max, entries) {
-    const stop = !entries
+function writeXML(state, max, entries = []) {
     let xml = '<?xml version="1.0" encoding="utf-8" ?>\n';    
     xml += `<language id="${process.env.LANGUAGE || 44}">\n`;
+    xml += `<page id="1" title="DATA" descr="">\n`;
+    xml += `<t id="1">${state}</t>\n`;
+    if (process.env.GAME_TICK) {
+        xml += `<t id="2">${process.env.GAME_TICK}</t>\n`;
+    }
+    if (process.env.GAME_DEBUG) {
+        xml += `<t id="3">${process.env.GAME_DEBUG}</t>\n`;
+    }
+    xml += '</page>\n';
     for(let i=0; i<max; i++) {
-        if (stop) {
-            xml += `<page id="${i+1}" title="${process.env.IP+':'+process.env.PORT}" descr="STOP">\n`;
-            xml += `<t id="1">${new Date().getTime()}</t>\n`;
-            xml += `<t id="2">0</t>\n`;
-        }
-        else if (entries[i]) {
-            xml += `<page id="${i+1}" title="${entries[i].title}" descr="${entries[i].description}">\n`;
+        if (entries[i]) {
+            xml += `<page id="${i+2}" title="${entries[i].title}" descr="${entries[i].description}">\n`;
             xml += `<t id="1">${entries[i].time}</t>\n`;
             xml += `<t id="2">9${entries[i].index.toString().zlPad(4)}</t>\n`;
             xml += `<t id="3">${entries[i].command}</t>\n`;
@@ -37,7 +40,7 @@ function writeXML(max, entries) {
             }
         }
         else {
-            xml += `<page id="${i+1}" title="" descr="">\n`;
+            xml += `<page id="${i+2}" title="" descr="">\n`;
             xml += `<t id="1"></t>\n`;
         }
         xml += '</page>\n';

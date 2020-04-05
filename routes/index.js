@@ -8,7 +8,7 @@ app.use(require('./station'));
 app.use(require('./ware'));
 
 app.get('/*', (req, res) => {
-    res.json({code: 404});
+    res.json({code: 404, message:'Not found'});
 });
 
 module.exports = app;
