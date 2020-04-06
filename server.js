@@ -1,9 +1,9 @@
-require('./src/global');
+require('./global');
 const file = require('./src/file');
 const command = require('./src/command');
 const express = require('express');
 const app = express();
-app.use(require('./routes/index'));
+app.use(require('./src/routes/index'));
 
 let closing = false;
 let interval;

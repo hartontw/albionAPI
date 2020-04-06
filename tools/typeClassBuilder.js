@@ -8,19 +8,26 @@ function getEntries(filePath) {
     const lines = text.split('\n');
     const entries = [];
     for(let line of lines) {
-        const groups = line.match(/(\d+)[ \t]+(\d+)[ \t]+([^\t]+)[ \t]+(.+)/);    
-        entries.push({
-            main: groups[1],
-            sub: groups[2],
-            class: `'${groups[3].trim().toLowerCase()}'`,
-            name: `'${groups[4].trim().toLowerCase()}'`
-        });
+        line = line.replace(/\s{2}/g, '\t');
+        line = line.replace(/\t+/g, '\t');            
+        line = line.replace(/ ?\t ?/g, '\t'); 
+        const groups = line.match(/(\d+)\t(\d+)\t([^\t]+)\t(.+)/);    
+        if (groups) {
+            entries.push({
+                main: groups[1],
+                sub: groups[2],
+                subName: `{${groups[4]}}`,
+                class: `[${groups[3].trim()}]`,
+                name: `'${groups[4].trim().toLowerCase()}'`
+            });
+        }
     }
     return entries;
 }
 
 function write(filePath, filter) {
     const entries = getEntries(filePath);
+    console.log(entries);
 
     const sp = filter.split('-');
 
@@ -31,18 +38,20 @@ function write(filePath, filter) {
     file += '*************************************************\n';
     file += `* SCRIPT NAME: ${path.basename(filePath)}: ${sp[0]}-${sp[1]}\n`;
     file += '* DESCRIPTION: \n';
-    file += '*\n';
+    file += '* \n';
     file += '* Auto generated with albionAPI\n';
-    file += '*\n';
+    file += '* \n';
     file += `* AUTHOR: ${process.env.AUTHOR || ''}          DATE: ${date.getUTCDate()} ${month} ${date.getUTCFullYear()}\n`;
     file += '*************************************************\n\n';
     file += 'if not $filter\n'
     file += '$array = array alloc: size=0\n';
-    for(let entry of entries) {            
-        file += `append ${entry[sp[0]]} to array $array\n`;    
+
+
+    for(let entry of entries) {       
+        file += `append ${entry[sp[0]]} to array $array\n`;
     }
     file += 'return $array\n';
-    for(let entry of entries) {
+    for(let entry of entries) {        
         file += `else if $filter == ${entry[sp[0]]}\n`
         file += `return ${entry[sp[1]]}\n`
     }

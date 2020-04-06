@@ -1,5 +1,6 @@
 /node_modules
 /game-resources
 config.json
+test.json
 *.xprj
 *.bak

@@ -1,4 +1,4 @@
-const sendRequest = require('../src/command').sendRequest;
+const sendRequest = require('../command').sendRequest;
 const express = require('express');
 const app = express();
 
@@ -6,6 +6,10 @@ const command = 'api.albion.get.player';
 
 app.get("/player", (req, res) => {
     sendRequest(req, res, { command });
+});
+
+app.get("/player/money", (req, res) => {
+    sendRequest(req, res, { command, args: ['money'] });
 });
 
 app.get("/player/fight", (req, res) => {

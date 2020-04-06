@@ -17,11 +17,12 @@ npm install
     "timeout": 5000,
     "tick": 1000,
     "debug": 0,
+    "id": 9999,
     "gameTick": 1000,
     "gameDebug": 0,
+    "gameLang": 34,
     "gamePath": "C:/Program Files (x86)/Steam/steamapps/common/x3 terran conflict",
     "dataPath":"C:/Users/Default/Documents/Egosoft/X3AP",
-    "language": 34,
     "addon": true
 }
 ```
@@ -31,11 +32,12 @@ Add your config.json in the same folder where server.js is
 - **timeout**: Maximum response wait
 - **tick**: Update time for refresh files
 - **debug**: Debug level [0(none) - 4(max)]
+- **id**: Language file prefix. If undefined 9999. EX: .../t/9999-L034.xml, .../t/9999.xml
 - **gameTick**: Update time for refresh files, if undefined 1000
 - **gameDebug**: Debug game level [0(none) - 4(max)], if undefined can be set from game
+- **gameLang**: Language code (phone) of your country, if undefined uses english
 - **gamePath**: X³ TC/AB game folder
 - **dataPath**: X³ TC/AB User data
-- **language**: Language code (phone) of your country, if undefined uses english
 - **addon**: If is defined search in addon folder instead game folder
 ---
 ## Usage
@@ -80,15 +82,17 @@ process.env.PORT
 process.env.TIME_OUT
 process.env.TICK
 process.env.DEBUG
+process.env.ID
 process.env.GAME_TICK
 process.env.GAME_DEBUG
+process.env.GAME_LANG
 process.env.GAME_PATH
 process.env.DATA_PATH
-process.env.LANGUAGE
 process.env.ADDON
 ```
 ---
 ##### Thanks To:
 - [Mr Bear](https://forum.egosoft.com/memberlist.php?mode=viewprofile&u=392909&sid=9c1548efc5c34d3dd65140b72e384ba4) for the amazing [X-Studio](https://forum.egosoft.com/viewtopic.php?t=301433)
+- [N8M4R3](https://forum.egosoft.com/memberlist.php?mode=viewprofile&u=240365) for adding missing commands to [X-Studio](https://forum.egosoft.com/viewtopic.php?f=94&t=417934)
 - [Egosoft forums](https://forum.egosoft.com/index.php) community
 ---

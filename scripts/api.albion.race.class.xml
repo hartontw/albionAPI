@@ -32,11 +32,9 @@
 		<line linenr="008" indent="">
 			<text>if</text>
 			<text> </text>
+			<text>not</text>
+			<text> </text>
 			<var>$race</var>
-			<text> </text>
-			<text>==</text>
-			<text> </text>
-			<var>null</var>
 		</line>
 		<line linenr="009" indent="&#160;">
 			<var>$array</var>
@@ -744,20 +742,14 @@
 				<sval type="string" val="array" />
 			</sval>
 			<sval type="array" size="80">
-				<sval type="array" size="13">
+				<sval type="array" size="7">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610606845" />
-					<sval type="int" val="3" />
+					<sval type="int" val="-536865020" />
+					<sval type="int" val="1" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="0" />
-					<sval type="int" val="0" />
-					<sval type="int" val="0" />
-					<sval type="int" val="15" />
-					<sval type="int" val="0" />
-					<sval type="int" val="3" />
+					<sval type="int" val="1" />
 					<sval type="int" val="-1" />
-					<sval type="int" val="0" />
-					<sval type="int" val="-2" />
 				</sval>
 				<sval type="array" size="4">
 					<sval type="int" val="128" />

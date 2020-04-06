@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const getPageLength = require('./file').getPageLength;
-const limit = 9999;
+const limit = 9999 - 1;
 
 let length = getPageLength();
 let entries = [];
@@ -38,6 +38,7 @@ function sendCommand(command) {
                 fs.unwatchFile(filePath);
                 const text = fs.readFileSync(filePath, 'utf8');
                 try {
+                    console.log(text);
                     const json = JSON.parse(text);
                     resolve(json);
                 }
@@ -52,7 +53,7 @@ function sendCommand(command) {
         });
         setTimeout( () => {
             entries[command.index] = undefined;
-            reject({code:`Time out for order ${command.index}`});
+            reject({code:503, message:`Time out for order ${command.index}`});
         }, process.env.TIME_OUT);
     });
 }

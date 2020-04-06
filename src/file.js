@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 function getLanguageFilePath() {
-    const sufix = process.env.LANGUAGE ? '-L' + process.env.LANGUAGE.toString().zlPad(3) : '';
-    const fileName = '9999' + sufix + '.xml';
+    const sufix = process.env.GAME_LANG ? '-L' + process.env.GAME_LANG.toString().zlPad(3) : '';
+    const fileName = `${process.env.ID}${sufix}.xml`;
     return path.join(process.env.GAME_PATH, 't', fileName);
 }
 
@@ -19,7 +19,7 @@ function getPageLength() {
 
 function writeXML(state, max, entries = []) {
     let xml = '<?xml version="1.0" encoding="utf-8" ?>\n';    
-    xml += `<language id="${process.env.LANGUAGE || 44}">\n`;
+    xml += `<language id="${process.env.GAME_LANG || 44}">\n`;
     xml += `<page id="1" title="DATA" descr="">\n`;
     xml += `<t id="1">${state}</t>\n`;
     if (process.env.GAME_TICK) {
@@ -28,6 +28,12 @@ function writeXML(state, max, entries = []) {
     if (process.env.GAME_DEBUG) {
         xml += `<t id="3">${process.env.GAME_DEBUG}</t>\n`;
     }
+    xml += `<t id="4">[author][yellow]albionAPI ${process.env.npm_package_version}[/yellow][/author]</t>\n`;
+    xml += '<t id="5">ID         \\t%s[br/]State      \\t%s%s[br/]Tick       \\t%s[br/]Debug      \\t%s</t>\n';
+    xml += '<t id="6">Called     \\t[green]%s[/green][br/]Failed     \\t[red]%s[/red][br/]Total      \\t%s[br/]Max Traffic\\t%s</t>\n';
+    xml += '<t id="7">\\033YalbionAPI\\033X</t>\n';
+    xml += '<t id="8">\\nState %s\\nCalled \\033G%s\\033X\\nFailed \\033R%s\\033X</t>\n';
+    xml += '<t id="9">: %s C:\\033G%s\\033XF:\\033R%s\\033X</t>\n';
     xml += '</page>\n';
     for(let i=0; i<max; i++) {
         if (entries[i]) {
@@ -57,9 +63,13 @@ function manageScripts() {
             fs.unlinkSync(path.join(scriptPath, script));
         }
     }
+    const version = process.env.npm_package_version.match(/^\d+/g)[0];
     scripts = fs.readdirSync('scripts');
     for(let script of scripts) {
-        fs.copyFileSync(path.join('scripts', script), path.join(scriptPath, script));
+        let file = fs.readFileSync(path.join('scripts', script), 'utf8');
+        file = file.replace(/<version>\d+<\/version>/, `<version>${version}</version>`)
+        fs.writeFileSync(path.join(scriptPath, script), file);        
+        //fs.copyFileSync(path.join('scripts', script), path.join(scriptPath, script));
     }
 }
 
