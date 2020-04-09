@@ -11,7 +11,11 @@ process.env.TIME_OUT = process.env.TIME_OUT || config.timeout || 5000;
 process.env.TICK = process.env.TICK || config.tick || 1000;
 process.env.DEBUG = process.env.DEBUG || config.debug || 0;
 process.env.ID = process.env.ID || config.id || 9999;
-process.env.GAME_TICK = process.env.GAME_TICK || config.gameTick
+process.env.LOG_INDEX = process.env.LOG_INDEX || config.logIndex || 9;
+if (process.env.LOG_INDEX.length * 1 === 'NaN' || process.env.LOG_INDEX.length > 1) {
+    throw new Error('LOG_INDEX must be single digit');
+}
+process.env.GAME_TICK = process.env.GAME_TICK || config.gameTick;
 process.env.GAME_DEBUG = process.env.GAME_DEBUG || config.gameDebug
 process.env.GAME_LANG = process.env.GAME_LANG || config.gameLang;
 process.env.GAME_PATH = process.env.GAME_PATH || config.gamePath || 'C:/Program Files (x86)/Steam/steamapps/common/x3 terran conflict';
@@ -27,5 +31,12 @@ String.prototype.zlPad = function(length) {
     let str = this;
     while (str.length < length)
         str = '0' + str;
+    return str;
+}
+
+String.prototype.srPad = function(length) {
+    let str = this;
+    while (str.length < length)
+        str += ' ';
     return str;
 }

@@ -18,12 +18,13 @@ npm install
     "tick": 1000,
     "debug": 0,
     "id": 9999,
+    "logIndex": 9,
     "gameTick": 1000,
     "gameDebug": 0,
-    "gameLang": 34,
+    "gameLang": 44,
     "gamePath": "C:/Program Files (x86)/Steam/steamapps/common/x3 terran conflict",
     "dataPath":"C:/Users/Default/Documents/Egosoft/X3AP",
-    "addon": true
+    "addon": false
 }
 ```
 Add your config.json in the same folder where server.js is
@@ -32,10 +33,11 @@ Add your config.json in the same folder where server.js is
 - **timeout**: Maximum response wait
 - **tick**: Update time for refresh files
 - **debug**: Debug level [0(none) - 4(max)]
-- **id**: Language file prefix. If undefined 9999. EX: .../t/9999-L034.xml, .../t/9999.xml
-- **gameTick**: Update time for refresh files, if undefined 1000
+- **id**: File language. Ex: 9999 -> t/9999-L034.xml, /t/9999.xml
+- **logIndex**: First digit of log files used. Ex: 9 --> log90000.txt, log94012.txt
+- **gameTick**: Update time for refresh files, if undefined can be set from game
 - **gameDebug**: Debug game level [0(none) - 4(max)], if undefined can be set from game
-- **gameLang**: Language code (phone) of your country, if undefined uses english
+- **gameLang**: [Language code (phone) of your country](https://www.countrycode.org/) for file. Ex: <language id="34">, <language id="44">
 - **gamePath**: X³ TC/AB game folder
 - **dataPath**: X³ TC/AB User data
 - **addon**: If is defined search in addon folder instead game folder
@@ -83,6 +85,7 @@ process.env.TIME_OUT
 process.env.TICK
 process.env.DEBUG
 process.env.ID
+process.env.LOG_INDEX
 process.env.GAME_TICK
 process.env.GAME_DEBUG
 process.env.GAME_LANG

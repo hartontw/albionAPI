@@ -5,7 +5,7 @@
 	<name>api.albion.response</name>
 	<version>1</version>
 	<engineversion>50</engineversion>
-	<description></description>
+	<description>Response and error formatting</description>
 	<arguments>
 		<argument index="1" name="response" type="Var/String" desc="Response content" />
 		<argument index="2" name="error" type="Var/Number" desc="Response code" />
@@ -163,7 +163,7 @@
 			<text> </text>
 			<var>$response</var>
 			<text> </text>
-			<text>and</text>
+			<text>AND</text>
 			<text> </text>
 			<var>$response</var>
 			<text> </text>
@@ -315,23 +315,50 @@
 			<text> </text>
 			<text>=</text>
 			<text> </text>
-			<var>null</var>
+			<text>array</text>
+			<text> </text>
+			<text>alloc</text>
+			<text>:</text>
+			<text> </text>
+			<text>size</text>
+			<text>=</text>
+			<var>2</var>
 		</line>
 		<line linenr="040" indent="">
+			<var>$return</var>
+			<text>[</text>
+			<var>0</var>
+			<text>]</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'Internal server error'</text>
+		</line>
+		<line linenr="041" indent="&#160;">
+			<var>$return</var>
+			<text>[</text>
+			<var>1</var>
+			<text>]</text>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<var>500</var>
+		</line>
+		<line linenr="042" indent="&#160;&#160;">
 			<text>end</text>
 		</line>
-		<line linenr="041" indent="&#160;" />
-		<line linenr="042" indent="&#160;&#160;">
+		<line linenr="043" indent="&#160;" />
+		<line linenr="044" indent="&#160;&#160;">
 			<text>return</text>
 			<text> </text>
 			<var>$return</var>
 		</line>
-		<line linenr="043" indent="&#160;" />
-		<line linenr="044" indent="&#160;&#160;">
+		<line linenr="045" indent="&#160;" />
+		<line linenr="046" indent="&#160;&#160;">
 			<var>errorWithoutResponse</var>
 			<text>:</text>
 		</line>
-		<line linenr="045" indent="&#160;">
+		<line linenr="047" indent="&#160;">
 			<text>if</text>
 			<text> </text>
 			<var>$error</var>
@@ -340,30 +367,12 @@
 			<text> </text>
 			<var>300</var>
 		</line>
-		<line linenr="046" indent="&#160;&#160;">
-			<var>$response</var>
-			<text> </text>
-			<text>=</text>
-			<text> </text>
-			<text>'Multiple Choices'</text>
-		</line>
-		<line linenr="047" indent="&#160;">
-			<text>else</text>
-			<text> </text>
-			<text>if</text>
-			<text> </text>
-			<var>$error</var>
-			<text> </text>
-			<text>==</text>
-			<text> </text>
-			<var>304</var>
-		</line>
 		<line linenr="048" indent="&#160;&#160;">
 			<var>$response</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
-			<text>'Not modified'</text>
+			<text>'Multiple Choices'</text>
 		</line>
 		<line linenr="049" indent="&#160;">
 			<text>else</text>
@@ -374,14 +383,14 @@
 			<text> </text>
 			<text>==</text>
 			<text> </text>
-			<var>400</var>
+			<var>304</var>
 		</line>
 		<line linenr="050" indent="&#160;&#160;">
 			<var>$response</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
-			<text>'Bad Request'</text>
+			<text>'Not modified'</text>
 		</line>
 		<line linenr="051" indent="&#160;">
 			<text>else</text>
@@ -392,14 +401,14 @@
 			<text> </text>
 			<text>==</text>
 			<text> </text>
-			<var>401</var>
+			<var>400</var>
 		</line>
 		<line linenr="052" indent="&#160;&#160;">
 			<var>$response</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
-			<text>'Unauthorized'</text>
+			<text>'Bad Request'</text>
 		</line>
 		<line linenr="053" indent="&#160;">
 			<text>else</text>
@@ -410,14 +419,14 @@
 			<text> </text>
 			<text>==</text>
 			<text> </text>
-			<var>403</var>
+			<var>401</var>
 		</line>
 		<line linenr="054" indent="&#160;&#160;">
 			<var>$response</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
-			<text>'Forbidden'</text>
+			<text>'Unauthorized'</text>
 		</line>
 		<line linenr="055" indent="&#160;">
 			<text>else</text>
@@ -428,29 +437,47 @@
 			<text> </text>
 			<text>==</text>
 			<text> </text>
-			<var>404</var>
+			<var>403</var>
 		</line>
 		<line linenr="056" indent="">
 			<var>$response</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
-			<text>'Not found'</text>
+			<text>'Forbidden'</text>
 		</line>
 		<line linenr="057" indent="">
 			<text>else</text>
+			<text> </text>
+			<text>if</text>
+			<text> </text>
+			<var>$error</var>
+			<text> </text>
+			<text>==</text>
+			<text> </text>
+			<var>404</var>
 		</line>
 		<line linenr="058" indent="">
 			<var>$response</var>
 			<text> </text>
 			<text>=</text>
 			<text> </text>
-			<text>'Internal server error'</text>
+			<text>'Not found'</text>
 		</line>
 		<line linenr="059" indent="">
-			<text>end</text>
+			<text>else</text>
 		</line>
 		<line linenr="060" indent="">
+			<var>$response</var>
+			<text> </text>
+			<text>=</text>
+			<text> </text>
+			<text>'Internal server error'</text>
+		</line>
+		<line linenr="061" indent="">
+			<text>end</text>
+		</line>
+		<line linenr="062" indent="">
 			<text>endsub</text>
 		</line>
 	</sourcetext>
@@ -458,7 +485,7 @@
 		<sval type="array" size="10">
 			<sval type="string" val="api.albion.response" />
 			<sval type="int" val="50" />
-			<sval type="string" val="" />
+			<sval type="string" val="Response and error formatting" />
 			<sval type="int" val="1" />
 			<sval type="int" val="0" />
 			<sval type="array" size="7">
@@ -470,7 +497,7 @@
 				<sval type="string" val="meta" />
 				<sval type="string" val="return" />
 			</sval>
-			<sval type="array" size="52">
+			<sval type="array" size="54">
 				<sval type="array" size="4">
 					<sval type="int" val="131" />
 					<sval type="int" val="-1610611965" />
@@ -563,7 +590,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="31" />
+					<sval type="int" val="33" />
 				</sval>
 				<sval type="array" size="31">
 					<sval type="int" val="104" />
@@ -686,7 +713,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="30" />
+					<sval type="int" val="32" />
 				</sval>
 				<sval type="array" size="7">
 					<sval type="int" val="104" />
@@ -723,7 +750,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="30" />
+					<sval type="int" val="32" />
 				</sval>
 				<sval type="array" size="7">
 					<sval type="int" val="104" />
@@ -736,7 +763,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="1167" />
-					<sval type="int" val="31" />
+					<sval type="int" val="33" />
 				</sval>
 				<sval type="array" size="4">
 					<sval type="int" val="128" />
@@ -764,16 +791,31 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="30" />
+					<sval type="int" val="32" />
+				</sval>
+				<sval type="array" size="4">
+					<sval type="int" val="128" />
+					<sval type="int" val="6" />
+					<sval type="int" val="4" />
+					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="7">
-					<sval type="int" val="104" />
+					<sval type="int" val="130" />
+					<sval type="int" val="131074" />
 					<sval type="int" val="6" />
-					<sval type="int" val="1" />
+					<sval type="int" val="4" />
 					<sval type="int" val="0" />
-					<sval type="int" val="0" />
+					<sval type="int" val="5" />
+					<sval type="string" val="Internal server error" />
+				</sval>
+				<sval type="array" size="7">
+					<sval type="int" val="130" />
+					<sval type="int" val="131074" />
+					<sval type="int" val="6" />
+					<sval type="int" val="4" />
 					<sval type="int" val="1" />
-					<sval type="int" val="-1" />
+					<sval type="int" val="4" />
+					<sval type="int" val="500" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="103" />
@@ -786,7 +828,7 @@
 				</sval>
 				<sval type="array" size="13">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610603773" />
+					<sval type="int" val="-1610603261" />
 					<sval type="int" val="3" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="1" />
@@ -810,11 +852,11 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="51" />
+					<sval type="int" val="53" />
 				</sval>
 				<sval type="array" size="13">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610603003" />
+					<sval type="int" val="-1610602491" />
 					<sval type="int" val="3" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="1" />
@@ -838,11 +880,11 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="51" />
+					<sval type="int" val="53" />
 				</sval>
 				<sval type="array" size="13">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610602235" />
+					<sval type="int" val="-1610601723" />
 					<sval type="int" val="3" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="1" />
@@ -866,11 +908,11 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="51" />
+					<sval type="int" val="53" />
 				</sval>
 				<sval type="array" size="13">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610601467" />
+					<sval type="int" val="-1610600955" />
 					<sval type="int" val="3" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="1" />
@@ -894,11 +936,11 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="51" />
+					<sval type="int" val="53" />
 				</sval>
 				<sval type="array" size="13">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610600699" />
+					<sval type="int" val="-1610600187" />
 					<sval type="int" val="3" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="1" />
@@ -922,11 +964,11 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="51" />
+					<sval type="int" val="53" />
 				</sval>
 				<sval type="array" size="13">
 					<sval type="int" val="104" />
-					<sval type="int" val="-1610599931" />
+					<sval type="int" val="-1610599419" />
 					<sval type="int" val="3" />
 					<sval type="int" val="131074" />
 					<sval type="int" val="1" />
@@ -950,7 +992,7 @@
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="112" />
-					<sval type="int" val="51" />
+					<sval type="int" val="53" />
 				</sval>
 				<sval type="array" size="7">
 					<sval type="int" val="104" />
@@ -1043,23 +1085,23 @@
 					<sval type="int" val="5" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="30" />
+					<sval type="int" val="32" />
 					<sval type="int" val="4" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="30" />
+					<sval type="int" val="32" />
 					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="31" />
+					<sval type="int" val="33" />
 					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="50" />
+					<sval type="int" val="52" />
 					<sval type="int" val="5" />
 				</sval>
 				<sval type="array" size="2">
-					<sval type="int" val="51" />
+					<sval type="int" val="53" />
 					<sval type="int" val="4" />
 				</sval>
 			</sval>

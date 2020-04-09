@@ -1,14 +1,27 @@
 const express = require('express');
 const app = express();
 
-app.use(require('./player'));
-app.use(require('./race'));
-app.use(require('./ship'));
-app.use(require('./station'));
-app.use(require('./ware'));
+function getArgs(url) {
+    const query = url.split('/');
+    query.shift();
 
-app.get('/*', (req, res) => {
-    res.json({code: 404, message:'Not found'});
+    const args = [];
+    for(let part of query) {
+        part = part.replace('%20', ' ').toLowerCase();
+        args.push(...part.split(';'));
+    }
+    
+    return args;
+}
+
+app.use((req, res, next) => {
+    req.body = {
+        title: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+        description: req.headers['user-agent'],        
+        args: getArgs(req.url)
+    };
+    next();
 });
+app.use(require('./get'));
 
 module.exports = app;

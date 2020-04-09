@@ -5,19 +5,19 @@
 	<name>api.albion.ship.type</name>
 	<version>1</version>
 	<engineversion>50</engineversion>
-	<description>Ship types</description>
+	<description>String to Ship SubType</description>
 	<arguments>
 		<argument index="1" name="type" type="Var/String" desc="Type" />
 	</arguments>
 	<sourcetext>
 		<line linenr="001" indent="">
-			<comment>*************************************************</comment>
+			<comment>* ************************************************</comment>
 		</line>
 		<line linenr="002" indent="">
 			<comment>* SCRIPT NAME: api.albion.ship.type</comment>
 		</line>
 		<line linenr="003" indent="">
-			<comment>* DESCRIPTION: Get ships types</comment>
+			<comment>* DESCRIPTION: String to Ship SubType</comment>
 		</line>
 		<line linenr="004" indent="">
 			<comment>* </comment>
@@ -26,7 +26,7 @@
 			<comment>* AUTHOR: Daniel Harton          DATE: 5 abril 2020</comment>
 		</line>
 		<line linenr="006" indent="">
-			<comment>*************************************************</comment>
+			<comment>* ************************************************</comment>
 		</line>
 		<line linenr="007" indent="" />
 		<line linenr="008" indent="">
@@ -10166,7 +10166,7 @@
 		<sval type="array" size="10">
 			<sval type="string" val="api.albion.ship.type" />
 			<sval type="int" val="50" />
-			<sval type="string" val="Ship types" />
+			<sval type="string" val="String to Ship SubType" />
 			<sval type="int" val="1" />
 			<sval type="int" val="0" />
 			<sval type="array" size="3">
@@ -21815,7 +21815,7 @@
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="DESCRIPTION: Get ships types" />
+					<sval type="string" val="DESCRIPTION: String to Ship SubType" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />

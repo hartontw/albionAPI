@@ -2,34 +2,36 @@
 <?xml-stylesheet href="x2script.xsl" type="text/xsl"?>
 <!-- Generated using X-Studio -->
 <script>
-	<name>api.albion.sector</name>
+	<name>api.get.station</name>
 	<version>1</version>
 	<engineversion>50</engineversion>
-	<description>Get ship info serialized in JSON format</description>
+	<description></description>
 	<arguments>
-		<argument index="1" name="sector" type="Var/Sector" desc="Sector" />
+		<argument index="1" name="query" type="Var/Array" desc="Query" />
 	</arguments>
 	<sourcetext>
 		<line linenr="001" indent="">
 			<comment>*************************************************</comment>
 		</line>
 		<line linenr="002" indent="">
-			<comment>* SCRIPT NAME: api.albion.sector</comment>
+			<comment>* SCRIPT NAME: api.get.station</comment>
 		</line>
 		<line linenr="003" indent="">
-			<comment>* DESCRIPTION: Get sector info serialized in JSON format</comment>
+			<comment>* DESCRIPTION: Get station info</comment>
 		</line>
 		<line linenr="004" indent="">
 			<comment>* </comment>
 		</line>
 		<line linenr="005" indent="">
-			<comment>* AUTHOR:           DATE: 4 abril 2020</comment>
+			<comment>* AUTHOR: Daniel Harton          DATE: 9 abril 2020</comment>
 		</line>
 		<line linenr="006" indent="">
 			<comment>*************************************************</comment>
 		</line>
 		<line linenr="007" indent="" />
-		<line linenr="008" indent="">
+		<line linenr="008" indent="" />
+		<line linenr="009" indent="" />
+		<line linenr="010" indent="">
 			<text>return</text>
 			<text> </text>
 			<var>null</var>
@@ -37,13 +39,13 @@
 	</sourcetext>
 	<codearray>
 		<sval type="array" size="10">
-			<sval type="string" val="api.albion.sector" />
+			<sval type="string" val="api.get.station" />
 			<sval type="int" val="50" />
-			<sval type="string" val="Get ship info serialized in JSON format" />
+			<sval type="string" val="" />
 			<sval type="int" val="1" />
 			<sval type="int" val="0" />
 			<sval type="array" size="1">
-				<sval type="string" val="sector" />
+				<sval type="string" val="query" />
 			</sval>
 			<sval type="array" size="1">
 				<sval type="array" size="3">
@@ -54,11 +56,11 @@
 			</sval>
 			<sval type="array" size="1">
 				<sval type="array" size="2">
-					<sval type="int" val="14" />
-					<sval type="string" val="Sector" />
+					<sval type="int" val="45" />
+					<sval type="string" val="Query" />
 				</sval>
 			</sval>
-			<sval type="array" size="7">
+			<sval type="array" size="9">
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
@@ -67,12 +69,12 @@
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="SCRIPT NAME: api.albion.sector" />
+					<sval type="string" val="SCRIPT NAME: api.get.station" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="DESCRIPTION: Get sector info serialized in JSON format" />
+					<sval type="string" val="DESCRIPTION: Get station info" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
@@ -82,12 +84,20 @@
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="AUTHOR:           DATE: 4 abril 2020" />
+					<sval type="string" val="AUTHOR: Daniel Harton          DATE: 9 abril 2020" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
 					<sval type="string" val="************************************************" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="0" />
+					<sval type="int" val="2" />
+				</sval>
+				<sval type="array" size="2">
+					<sval type="int" val="0" />
+					<sval type="int" val="2" />
 				</sval>
 				<sval type="array" size="2">
 					<sval type="int" val="0" />

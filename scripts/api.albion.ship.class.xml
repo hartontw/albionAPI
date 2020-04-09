@@ -5,19 +5,19 @@
 	<name>api.albion.ship.class</name>
 	<version>1</version>
 	<engineversion>50</engineversion>
-	<description>Ship classes</description>
+	<description>String to Ship Class</description>
 	<arguments>
 		<argument index="1" name="class" type="Var/String" desc="Class name" />
 	</arguments>
 	<sourcetext>
 		<line linenr="001" indent="">
-			<comment>*************************************************</comment>
+			<comment>* ************************************************</comment>
 		</line>
 		<line linenr="002" indent="">
 			<comment>* SCRIPT NAME: api.albion.ship.class</comment>
 		</line>
 		<line linenr="003" indent="">
-			<comment>* DESCRIPTION: Simple conversion system for ship classes</comment>
+			<comment>* DESCRIPTION: String to Ship Class</comment>
 		</line>
 		<line linenr="004" indent="">
 			<comment>* </comment>
@@ -26,7 +26,7 @@
 			<comment>* AUTHOR: Daniel Harton          DATE: 5 April 2020</comment>
 		</line>
 		<line linenr="006" indent="">
-			<comment>*************************************************</comment>
+			<comment>* ************************************************</comment>
 		</line>
 		<line linenr="007" indent="" />
 		<line linenr="008" indent="">
@@ -877,7 +877,7 @@
 		<sval type="array" size="10">
 			<sval type="string" val="api.albion.ship.class" />
 			<sval type="int" val="50" />
-			<sval type="string" val="Ship classes" />
+			<sval type="string" val="String to Ship Class" />
 			<sval type="int" val="1" />
 			<sval type="int" val="0" />
 			<sval type="array" size="2">
@@ -1888,7 +1888,7 @@
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="DESCRIPTION: Simple conversion system for ship classes" />
+					<sval type="string" val="DESCRIPTION: String to Ship Class" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />

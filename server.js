@@ -1,44 +1,30 @@
 require('./global');
-const file = require('./src/file');
-const command = require('./src/command');
-const express = require('express');
-const app = express();
-app.use(require('./src/routes/index'));
+const requests = require('./src/requests');
+const app = require('express')();
 
 let closing = false;
-let interval;
+let clear = false;
 
 function onExit(code) {
     if (!closing) { 
-        closing = true;   
-        if (interval) {
-            clearInterval(interval);
-        }
-        file.writeXML('STOPPED', command.max());
+        closing = true;
+        requests.stop();
         process.exit(0);
     }
 }
 
 for(let arg of process.argv) {
     if (arg === 'clear') {
-        file.manageScripts();
-        command.reset();
-    }
-    else if (arg === 'scripts') {
-        file.manageScripts();
-    }
-    else if(arg === 'file') {
-        command.reset();
+        clear = true;
+        break;
     }
 }
 
-file.writeXML('RUNNING', command.max(), command.get());
-interval = setInterval(() => {
-    file.writeXML('RUNNING', command.max(), command.get());
-}, TICK);
+requests.start(clear);
 
+app.use(require('./src/routes/index'));
 app.listen(process.env.PORT, process.env.IP);
-console.log(`albionAPI listening on http://${process.env.IP+':'+process.env.PORT}`);
+console.log(`albionAPI listening on http://${process.env.IP}:${process.env.PORT}`);
 
 process.on('SIGINT', onExit);
 process.on('SIGTERM', onExit);

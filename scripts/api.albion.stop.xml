@@ -5,7 +5,7 @@
 	<name>api.albion.stop</name>
 	<version>1</version>
 	<engineversion>50</engineversion>
-	<description></description>
+	<description>API Stop</description>
 	<arguments />
 	<sourcetext>
 		<line linenr="001" indent="">
@@ -15,7 +15,7 @@
 			<comment>* SCRIPT NAME: api.terran.stop</comment>
 		</line>
 		<line linenr="003" indent="">
-			<comment>* DESCRIPTION: Basic API stop command</comment>
+			<comment>* DESCRIPTION: API STOP</comment>
 		</line>
 		<line linenr="004" indent="">
 			<comment>* </comment>
@@ -59,7 +59,7 @@
 		<sval type="array" size="10">
 			<sval type="string" val="api.albion.stop" />
 			<sval type="int" val="50" />
-			<sval type="string" val="" />
+			<sval type="string" val="API Stop" />
 			<sval type="int" val="1" />
 			<sval type="int" val="0" />
 			<sval type="int" val="0" />
@@ -97,7 +97,7 @@
 				<sval type="array" size="3">
 					<sval type="int" val="0" />
 					<sval type="int" val="1" />
-					<sval type="string" val="DESCRIPTION: Basic API stop command" />
+					<sval type="string" val="DESCRIPTION: API STOP" />
 				</sval>
 				<sval type="array" size="3">
 					<sval type="int" val="0" />

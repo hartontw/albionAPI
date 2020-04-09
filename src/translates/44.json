@@ -1,0 +1,17 @@
+{
+    "ID": "ID",
+    "State": "State",
+    "Error": "[red]Error[/red]",
+    "Tick": "Tick",
+    "Debug": "Debug",
+    "Called": "Called",
+    "Failed": "Failed",
+    "Total": "Total",
+    "MaxTraffic": "Max Traffic",
+    "StateRunning": "\\033GRunning\\033X",
+    "StatePaused": "\\033OPaused\\033X",
+    "StateStopped": "\\033RStopped\\033X",
+    "StateFailed": "\\033RFailed\\033X",
+    "Script": "Script",
+    "Query": "Query"
+}
